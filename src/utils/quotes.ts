@@ -7,12 +7,20 @@ export interface Quote {
 	author?: string;
 }
 
+const DEFAULT_QUOTES: Quote[] = [
+	{ id: 'default-1', text: '同じことを繰り返して異なる結果を期待すること、それが狂気だ。', author: 'アインシュタイン' },
+	{ id: 'default-2', text: '学ぶことをやめたとき、あなたは死んでいる。', author: 'アインシュタイン' },
+	{ id: 'default-3', text: '楽しいから笑うのではない。笑うから楽しいのだ。', author: 'ウィリアム・ジェームズ' },
+	{ id: 'default-3', text: '明日死ぬかのように生きよ。永遠に生きるかのように学べ', author: 'ガンジー' },
+]
+
 export function getQuotes (): Quote[] {
 	if (typeof window === 'undefined') {
 		return [];
 	}
 	const quotesJson = localStorage.getItem(QUOTES_KEY);
-	return quotesJson ? JSON.parse(quotesJson) : [];
+	const storedQuotes = quotesJson ? JSON.parse(quotesJson) : [];
+	return storedQuotes.length > 0 ? storedQuotes : DEFAULT_QUOTES;
 }
 
 export function getSelectedQuoteId (): string | null {

@@ -75,6 +75,7 @@ body {
   width: 100%;
   max-width: 75%;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* ナビゲーション */
@@ -322,6 +323,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+  margin-top: 1rem;
 }
 
 .submit-button:hover {

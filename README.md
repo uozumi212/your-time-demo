@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Your Time Clone
 
-## Getting Started
+あなたの時間を可視化し、大切にするためのアプリケーション。「Your Time」のクローンプロジェクトです。
+人生の残り時間を計算し、モチベーションを高める名言と共に表示します。
 
-First, run the development server:
+## 機能
+
+*   **人生のカウントダウン**: 生年月日と平均寿命を設定することで、残された時間をリアルタイムで表示します。
+*   **人生の統計**: 経過日数、残り日数、人生の進捗率（%）を統計カードとして表示します。
+*   **名言管理**: 自分を鼓舞する名言を登録・管理（追加・削除）できます。
+*   **名言表示**: 登録した名言の中から、現在のお気に入りを選択してホーム画面に表示できます。長い名言も美しく表示されます。
+    *   選択機能: お気に入りの名言を一つ選択してトップに固定表示。
+    *   閲覧機能: 登録済み名言を順に閲覧可能。
+*   **ダークモード対応**: システム設定または手動切り替えによるライト/ダークモードに対応。美しいグラデーションとグラスモーフィズムデザインを採用。
+*   **PWA対応**: モバイルデバイスでホーム画面に追加し、ネイティブアプリのように使用可能。
+
+## 技術スタック
+
+*   **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4), CSS Modules
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **PWA**: [next-pwa](https://github.com/shadowwalker/next-pwa)
+
+## セットアップ手順
+
+### 必要要件
+
+*   Node.js 18.17.0 以上
+*   npm または yarn, pnpm, bun
+
+### インストール
+
+1.  リポジトリをクローンします:
+    ```bash
+    git clone <repository-url>
+    cd your-time-clone
+    ```
+
+2.  依存関係をインストールします:
+    ```bash
+    npm install
+    # または yarn install, pnpm install, bun install
+    ```
+
+### 開発サーバーの起動
+
+以下のコマンドで開発サーバーを起動します:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) にアクセスしてアプリを確認します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ビルドと実行
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+本番用にビルドして実行するには:
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## プロジェクト構造
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   `src/app`: アプリケーションのページとレイアウト (Next.js App Router)
+    *   `src/app/quotes`: 名言管理ページ
+*   `src/components`: 再利用可能なUIコンポーネント (InputForm, ProgressBar, QuoteDisplayなど)
+*   `src/utils`: ユーティリティ関数 (時間計算ロジック、LocalStorage操作など)
+*   `public`: 静的アセット (アイコン、マニフェストなど)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ライセンス
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License

@@ -1,0 +1,27 @@
+		{
+			"name": "Your Time Clone",
+			"short_name": "YourTime",
+			"description": "あなたの時間管理をサポートするアプリ",
+			"start_url": "/",
+			"display": "standalone",
+			"background_color": "#ffffff",
+			"theme_color": "#2563eb",
+			"icons": [
+				{
+					"src": "/icons/clock-check.svg",
+					"sizes": "192x192",
+					"type": "image/svg+xml"
+				},
+				{
+					"src": "/icons/clock-check.svg",
+					"sizes": "512x512",
+					"type": "image/svg+xml"
+				},
+				{
+					"src": "/icons/clock-check.svg",
+					"sizes": "512x512",
+					"type": "image/png",
+					"purpose": "maskable"
+				}
+			]
+		}
