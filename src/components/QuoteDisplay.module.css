@@ -53,3 +53,26 @@
 	color: var(--color-accent-2);
 	border-color: rgba(139, 92, 246, 0.3);
 }
+
+@media(max-width: 768px) {
+	.text {
+		font-size: 1rem;
+	}
+
+	.author {
+		font-size: 0.8rem;
+	}
+
+	.controls {
+		font-size: 0.8rem;
+	}
+
+	.btn {
+		font-size: 0.7rem;
+		padding: 0.4rem 0.8rem;
+	}
+
+	.self-center {
+		margin-top: 10px;
+	}
+}

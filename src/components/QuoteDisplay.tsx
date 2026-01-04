@@ -58,9 +58,9 @@ export default function QuoteDisplay () {
 					<button onClick={handlePrev} className={styles.btn}>
 						← 前へ
 					</button>
-					<span className="text-sm text-gray-500 self-center">
+					<div className="text-sm text-gray-500 self-center">
 						{currentIndex + 1} / {quotes.length}
-					</span>
+					</div>
 					<button onClick={handleNext} className={styles.btn}>
 						次へ →
 					</button>

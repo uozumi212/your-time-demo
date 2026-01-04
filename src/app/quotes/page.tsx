@@ -5,7 +5,7 @@ import { getQuotes, deleteQuote, Quote, getSelectedQuoteId, setSelectedQuoteId }
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 
-import styles from './quotes.module.css';
+import styles from './Quotes.module.css';
 
 export default function QuotesList () {
 	const [quotes, setQuotes] = useState<Quote[]>([]);

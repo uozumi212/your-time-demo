@@ -208,6 +208,10 @@ body {
   transition: all 0.3s ease;
 }
 
+.self-center {
+  margin-top: 10px;
+}
+
 /* フォームセクション */
 .form-section {
   background: var(--color-bg-card);
@@ -582,6 +586,14 @@ body {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+  .content-wrapper {
+    max-width: 85%;
+  }
+
+  .header {
+    margin-bottom: 1.3rem;
+  }
+
   .title {
     font-size: 2.5rem;
   }
@@ -615,11 +627,27 @@ body {
     font-size: 2rem;
   }
 
+  .timer-section {
+    margin-bottom: 2rem;
+  }
+
+  .time-unit {
+    padding: 1rem;
+  }
+
   .time-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .time-value {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .progress-section {
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
   }
 }

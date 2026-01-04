@@ -91,3 +91,29 @@
 	background: rgba(66, 245, 194, 0.2);
 	transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+	.quoteListItem {
+		display: block;
+	}
+
+	.text {
+		font-size: 1rem;
+	}
+
+	.author {
+		margin: 5px 0;
+	}
+
+	.actions {
+		justify-content: center;
+	}
+
+	.deleteBtn {
+		padding: 0.4rem 0.8rem;
+	}
+
+	.selectBtn {
+		padding: 0.4rem 0.8rem;
+	}
+}
