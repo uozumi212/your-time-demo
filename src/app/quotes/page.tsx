@@ -14,13 +14,19 @@ export default function QuotesList () {
 
 	useEffect(() => {
 		const loadedQuotes = getQuotes();
-		setQuotes(loadedQuotes);
+		requestAnimationFrame(() => {
+			setQuotes(loadedQuotes);
+		});
 		const selectedQuoteId = getSelectedQuoteId();
 		if (selectedQuoteId) {
 			const selectedQuote = loadedQuotes.find((quote) => quote.id === selectedQuoteId);
-			setSelectQuote(selectedQuote || null);
+			requestAnimationFrame(() => {
+				setSelectQuote(selectedQuote || null);
+			});
 		}
-		setIsLoading(false);
+		requestAnimationFrame(() => {
+			setIsLoading(false);
+		});
 	}, []);
 
 	const handleDelete = (id: string) => {
@@ -75,7 +81,7 @@ export default function QuotesList () {
 									>
 										<div className={styles.textContainer}>
 											<p className={styles.text} title={quote.text}>
-												"{quote.text}"
+												&quot;{quote.text}&quot;
 											</p>
 											{quote.author && (
 												<p className={styles.author}>- {quote.author}</p>

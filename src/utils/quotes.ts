@@ -11,7 +11,7 @@ const DEFAULT_QUOTES: Quote[] = [
 	{ id: 'default-1', text: '同じことを繰り返して異なる結果を期待すること、それが狂気だ。', author: 'アインシュタイン' },
 	{ id: 'default-2', text: '学ぶことをやめたとき、あなたは死んでいる。', author: 'アインシュタイン' },
 	{ id: 'default-3', text: '楽しいから笑うのではない。笑うから楽しいのだ。', author: 'ウィリアム・ジェームズ' },
-	{ id: 'default-3', text: '明日死ぬかのように生きよ。永遠に生きるかのように学べ', author: 'ガンジー' },
+	{ id: 'default-4', text: '明日死ぬかのように生きよ。永遠に生きるかのように学べ', author: 'ガンジー' },
 ]
 
 export function getQuotes (): Quote[] {

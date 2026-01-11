@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface InputFormProps {
 	onSubmit: (birthDate: Date, lifeExpectancy: number) => void;
@@ -8,24 +8,23 @@ interface InputFormProps {
 	initialLifeExpectancy?: number;
 }
 
+const formatDate = (date: Date) => {
+	if (!date) return '';
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const day = String(date.getDate()).padStart(2, '0');
+	return `${year}-${month}-${day}`;
+};
+
 export default function InputForm ({
 	onSubmit,
 	initialBirthDate,
 	initialLifeExpectancy = 80,
 }: InputFormProps) {
-	const [birthDate, setBirthDate] = useState<string>('');
+	const [birthDate, setBirthDate] = useState<string>(() => formatDate(initialBirthDate || new Date()));
 	const [lifeExpectancy, setLifeExpectancy] = useState<number>(
 		initialLifeExpectancy
 	);
-
-	useEffect(() => {
-		if (initialBirthDate) {
-			const year = initialBirthDate.getFullYear();
-			const month = String(initialBirthDate.getMonth() + 1).padStart(2, '0');
-			const day = String(initialBirthDate.getDate()).padStart(2, '0');
-			setBirthDate(`${year}-${month}-${day}`);
-		}
-	}, [initialBirthDate]);
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();

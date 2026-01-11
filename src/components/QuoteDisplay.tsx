@@ -6,28 +6,66 @@ import { getQuotes, Quote, getSelectedQuoteId } from '@/utils/quotes';
 import styles from './QuoteDisplay.module.css';
 
 export default function QuoteDisplay () {
-	const [quotes, setQuotes] = useState<Quote[]>([]);
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const selectedQuoteId = getSelectedQuoteId();
+
+	const [data, setData] = useState<{
+		quotes: Quote[];
+		currentIndex: number;
+		isLoaded: boolean;
+	}>({
+		quotes: [],
+		currentIndex: 0,
+		isLoaded: false,
+	});
 
 	useEffect(() => {
 		// クライアントサイドでのみ実行
 		const loadedQuotes = getQuotes();
+		const selectedQuoteId = getSelectedQuoteId();
+
+		let initialIndex = 0;
+
 		// シャッフルしてランダムな順序にする（オプション）
 		// setQuotes(loadedQuotes.sort(() => Math.random() - 0.5));
 		if (selectedQuoteId) {
-			setCurrentIndex(loadedQuotes.findIndex((quote) => quote.id === selectedQuoteId));
+			const foundIndex = loadedQuotes.findIndex((q) => q.id === selectedQuoteId);
+
+			if (foundIndex !== -1) {
+				initialIndex = foundIndex;
+			}
 		}
-		setQuotes(loadedQuotes);
-	}, [selectedQuoteId]);
+
+		requestAnimationFrame(() => {
+			setData({
+				quotes: loadedQuotes,
+				currentIndex: initialIndex,
+				isLoaded: true,
+			});
+		});
+	}, []);
 
 	const handleNext = () => {
-		setCurrentIndex((prev) => (prev + 1) % quotes.length);
+		setData((prev) => ({
+			...prev,
+			currentIndex: (prev.currentIndex + 1) % prev.quotes.length,
+		}));
 	};
 
 	const handlePrev = () => {
-		setCurrentIndex((prev) => (prev - 1 + quotes.length) % quotes.length);
+				setData((prev) => ({
+			...prev,
+			currentIndex: (prev.currentIndex - 1 + prev.quotes.length) % prev.quotes.length,
+		}));
 	};
+
+	const { quotes, currentIndex, isLoaded } = data;
+
+	if (!isLoaded) {
+		return (
+			<div className={styles.container}>
+				<p className={`${styles.text} text-base`}>名言を読み込んでいます...</p>
+			</div>
+		);
+	}
 
 	if (quotes.length === 0) {
 		return (
@@ -47,7 +85,7 @@ export default function QuoteDisplay () {
 	return (
 		<div className={styles.container}>
 			<div className={styles.content}>
-				<p className={styles.text}>"{currentQuote.text}"</p>
+				<p className={styles.text}>&quot;{currentQuote.text}&quot;</p>
 				{currentQuote.author && (
 					<p className={styles.author}>- {currentQuote.author}</p>
 				)}
