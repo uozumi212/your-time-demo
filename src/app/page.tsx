@@ -26,17 +26,23 @@ export default function Home () {
 
   // クライアントサイドでのみ実行
   useEffect(() => {
-    setIsClient(true);
+    requestAnimationFrame(() => {
+      setIsClient(true);
+    });
 
     // LocalStorageから設定を読み込む
     const savedBirthDate = localStorage.getItem(STORAGE_KEY_BIRTHDATE);
     const savedLifeExpectancy = localStorage.getItem(STORAGE_KEY_LIFE_EXPECTANCY);
 
     if (savedBirthDate) {
-      setBirthDate(new Date(savedBirthDate));
+      requestAnimationFrame(() => {
+        setBirthDate(new Date(savedBirthDate));
+      });
     }
     if (savedLifeExpectancy) {
-      setLifeExpectancy(Number(savedLifeExpectancy));
+      requestAnimationFrame(() => {
+        setLifeExpectancy(Number(savedLifeExpectancy));
+      });
     }
   }, []);
 
