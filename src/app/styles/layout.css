@@ -1,0 +1,17 @@
+/* メインコンテナ */
+.main-container {
+    min-height: calc(100vh - 80px);
+    /* ナビゲーションバーの分を引く */
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+

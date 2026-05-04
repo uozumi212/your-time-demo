@@ -1,0 +1,59 @@
+/* タイマーセクション */
+.timer-section {
+    margin-bottom: 3rem;
+}
+
+.time-display-container {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-card);
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.time-grid:last-child {
+    margin-bottom: 0;
+}
+
+.time-unit {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--color-input-bg);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.time-unit:hover {
+    background: rgba(139, 92, 246, 0.05);
+    border-color: rgba(139, 92, 246, 0.2);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.time-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.time-label {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+

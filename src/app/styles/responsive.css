@@ -1,0 +1,68 @@
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .content-wrapper {
+        max-width: 85%;
+    }
+
+    .header {
+        margin-bottom: 1.3rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .time-value {
+        font-size: 2.5rem;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section,
+    .time-display-container,
+    .progress-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .timer-section {
+        margin-bottom: 2rem;
+    }
+
+    .time-unit {
+        padding: 1rem;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .time-value {
+        font-size: 1.5rem;
+    }
+
+    .progress-section {
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}
+

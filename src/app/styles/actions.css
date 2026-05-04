@@ -1,0 +1,29 @@
+/* アクションセクション */
+.actions-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.reset-button {
+    padding: 1rem 2.5rem;
+    background: var(--color-input-bg);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    transform: translateY(-2px);
+}
+
+.reset-button:active {
+    transform: translateY(0);
+}
+
