@@ -91,7 +91,7 @@ export default function RegisterQuote() {
                   value={quote}
                   onChange={(e) => setQuote(e.target.value)}
                   placeholder="ここに名言を入力してください..."
-                  className="form-input min-h-[120px]"
+                  className="form-input min-h-[120px] text-left pl-8 pr-5"
                   required
                 />
               </div>
@@ -106,7 +106,7 @@ export default function RegisterQuote() {
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   placeholder="例: スティーブ・ジョブズ"
-                  className="form-input"
+                  className="form-input text-left pl-8 pr-5"
                 />
               </div>
 
