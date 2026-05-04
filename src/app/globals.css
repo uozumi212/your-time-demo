@@ -1,3 +1,4 @@
+@import "./styles/forms.css";
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
@@ -6,7 +7,6 @@
 @import "./styles/layout.css";
 @import "./styles/navigation.css";
 @import "./styles/header.css";
-@import "./styles/forms.css";
 @import "./styles/timer.css";
 @import "./styles/progress.css";
 @import "./styles/stats.css";
