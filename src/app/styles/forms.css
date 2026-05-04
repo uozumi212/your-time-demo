@@ -56,7 +56,6 @@
         font-size: 1rem;
         font-family: inherit;
         transition: all 0.3s ease;
-        /* デフォルトの入力開始位置を少し右へ（左パディングはユーティリティで制御できるように残す） */
         padding-top: 1rem;
         padding-bottom: 1rem;
         padding-right: 1.25rem;
