@@ -56,7 +56,7 @@ export default function RegisterQuote() {
             <p className="subtitle">あなたの心に響く言葉を残しましょう</p>
           </header>
 
-          <div className="form-section !p-4 pt-6 max-w-2xl mx-auto relative">
+          <div className="form-section !p-4 pt-6 max-w-2xl justify-center inline">
             {/* AI Trigger Area */}
             <div className="!p-2 mb-2 px-4 py-3 sm:pr-5 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-indigo-900/10 dark:to-purple-900/10 border border-indigo-500/10 dark:border-indigo-500/20 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="min-w-0">
@@ -91,7 +91,7 @@ export default function RegisterQuote() {
                   value={quote}
                   onChange={(e) => setQuote(e.target.value)}
                   placeholder="ここに名言を入力してください..."
-                  className="form-input rounded-xl min-h-[120px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border dark:border-slate-700"
+                  className="form-input rounded-xl !pl-2 min-h-[120px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border dark:border-slate-700"
                   required
                 />
               </div>
@@ -106,7 +106,7 @@ export default function RegisterQuote() {
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   placeholder="例: スティーブ・ジョブズ"
-                  className="form-input rounded-xl min-h-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700"
+                  className="form-input !pl-2  rounded-xl min-h-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700"
                 />
               </div>
 
